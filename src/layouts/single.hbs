@@ -1,0 +1,59 @@
+{{> head}}
+
+<body class="single page">
+
+{{> schema-single}}
+{{> schema-single-crumbs}}
+{{> schema-org}}
+
+{{> header}}
+
+<!-- Main -->
+<section class="container" id="{{slug}}">
+
+  <div class="row">
+
+    <main class="col-xs-12 page__main content">
+      <br />
+      <nav class="breadcrumbs">
+        <a class="breadcrumbs__home" href="{{base_url}}" id="breadCrumbHome">Home</a> ›
+        <a class="breadcrumbs__category" href="{{base_url}}{{cat_slug}}/" id="breadCrumbCategoryTitle"> {{ cat_title }} </a> ›
+        <span class="breadcrumbs__category" id="article{{titleBasedId title}}">{{ title }}</span>
+      </nav>
+
+      <article class="block block__content clearfix" itemscope itemtype="http://schema.org/Article">
+          <h1 class="page__title" itemprop="headline" id="articleTitle{{titleBasedId title}}">{{ title }}</h1>
+          <div class="content">
+            {{{ content }}}
+          </div>
+
+          <br />
+          <hr />
+          <br />
+
+          <div class="row">
+            <p class="col">
+              <a href="https://github.com/MyEtherWallet/knowledge-base/blob/master/src/content/{{cat_slug}}/{{slug}}.md" target="_blank" rel="noopener noreferrer">
+                Found a typo? Want to improve this article? <br /> It's easy!
+              </a>
+            </p>
+            <p class="col">
+              <a href="{{base_url}}diving-deeper/how-to-submit-pull-request.html" target="_blank" rel="noopener noreferrer">
+                Don't know how to submit a pull request? <br /> It's also easy!
+              </a>
+            </p>
+      </article>
+
+    </main>
+
+  </div>
+
+</section>
+
+{{> footer-pre}}
+
+{{> footer}}
+
+</body>
+
+</html>
